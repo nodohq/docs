@@ -142,7 +142,7 @@ export default function App() {
         {/* ... Inspector ... */}
       </aside>
 
-      <Debug />
+      {/* <Debug /> */}
     </div>
   );
 }
