@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { clampZoom } from "../utils/projection";
 import { snapBeatToBeat } from "../utils/snap";
 import { isPlacementValid, MIN_BLOCK_LEN_BEATS } from "../utils/collisions";
+import { BLOCK_DEFAULTS_BY_TYPE } from "../config";
 
 const DEFAULT = {
   bpmLocked: 126,
@@ -119,6 +120,43 @@ export const useProjectStore = create((set, get) => ({
         timeline: {
           ...state.timeline,
           blocks: blocks.map((b) => (b.id === blockId ? finalBlock : b)),
+        },
+      };
+    });
+  },
+
+  createBlock: (type) => {
+    set((state) => {
+      const defaults = BLOCK_DEFAULTS_BY_TYPE[type];
+      if (!defaults) return state;
+
+      const firstTrackId = state.tracks[0]?.id ?? null;
+      if (!firstTrackId) return state;
+
+      const id =
+        typeof crypto !== "undefined" && crypto.randomUUID
+          ? crypto.randomUUID()
+          : `block_${Date.now()}_${Math.random().toString(16).slice(2)}`;
+
+      // Ticket #09: (x:100,y:100) => x maps to beats; y maps to first lane.
+      const startBeat = snapBeatToBeat(100 / state.zoom.pxPerBeat);
+
+      const newBlock = {
+        id,
+        trackId: firstTrackId,
+        startBeat,
+        lengthBeats: defaults.lengthBeats,
+        transition: defaults.transition ?? "cut",
+      };
+
+      return {
+        timeline: {
+          ...state.timeline,
+          blocks: [...state.timeline.blocks, newBlock],
+        },
+        selection: {
+          selectedTrackId: null,
+          selectedBlockId: id,
         },
       };
     });
