@@ -82,4 +82,18 @@ export const useProjectStore = create((set, get) => ({
       };
     });
   },
+
+  hydrateFromStorage: (data) => {
+    if (!data || typeof data !== "object") return;
+
+    set((state) => ({
+      // on garde les fonctions/actions existantes, on ne remplace que les data
+      bpmLocked: data.bpmLocked ?? state.bpmLocked,
+      zoom: data.zoom ?? state.zoom,
+      selection: data.selection ?? state.selection,
+      tracks: data.tracks ?? state.tracks,
+      timeline: data.timeline ?? state.timeline,
+    }));
+  },
+
 }));
