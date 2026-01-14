@@ -9,8 +9,14 @@ Règle: chaque ticket = 1 seule chose livrable. Pas de “petit extra”.
 - Aucun drag, aucun snap, aucun audio
 
 ## Ticket #02 — Store Beat-Atomic
+- **DONE**
+
 ## Ticket #03 — IndexedDB save/load
+- **DONE (implemented as part of Ticket #01)**
+
 ## Ticket #04 — Grille + snapping
+- **IN PROGRESS**
+
 ## Ticket #05 — Drag Library -> Timeline
 ## Ticket #06 — Move/Resize + collisions (Zéro Ghost Move)
 ## Ticket #07 — Transitions objets + inspector

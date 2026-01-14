@@ -1,7 +1,7 @@
 import { saveProjectState } from "./projectDb";
 
 /**
- * Persistance: sauvegarde l'état "persistable" du store dans IndexedDB.
+ * Persistance: sauvegarde l\'état "persistable" du store dans IndexedDB.
  * - Debounce 250ms
  * - Ignore les fonctions/actions
  */

@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { clampZoom } from "../utils/projection";
+import { snapBeatToBeat } from "../utils/snap";
 
 const DEFAULT = {
   bpmLocked: 126,
@@ -30,7 +31,7 @@ export const useProjectStore = create((set, get) => ({
     set(state => ({
       timeline: {
         ...state.timeline,
-        playheadBeat: Math.round(beat), // Sanitize and set (snap function will be in another commit)
+        playheadBeat: snapBeatToBeat(beat), // Sanitize and set
       }
     }))
   },
@@ -47,10 +48,10 @@ export const useProjectStore = create((set, get) => ({
 
   // --- Selection ---
   selectTrack: (trackId) => {
-    const exists = get().tracks.some((t) => t.id === trackId);
-    set(state => ({
-        selection: { ...state.selection, selectedTrackId: exists ? trackId : null }
-    }));
+    set(state => {
+        const exists = state.tracks.some((t) => t.id === trackId);
+        return { selection: { ...state.selection, selectedTrackId: exists ? trackId : null } };
+    });
   },
 
   getSelectedTrack: () => {
@@ -76,6 +77,7 @@ export const useProjectStore = create((set, get) => ({
       zoom: data.zoom ?? state.zoom,
       selection: data.selection ?? state.selection,
       tracks: data.tracks ?? state.tracks,
+      // Ticket #04: Ensure timeline object (including playhead) is hydrated
       timeline: data.timeline ?? state.timeline,
     }));
   },
