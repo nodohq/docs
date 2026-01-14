@@ -18,8 +18,8 @@ const TimelineBlock = ({ block, containerRef, laneLabelWidthPx = 0 }) => {
   const laneHeightPx = useProjectStore((s) => s.timeline.layout.laneHeightPx);
   
   // Ticket #08: selection
-  const setSelectedBlockId = useProjectStore((s) => s.setSelectedBlockId);
-  const selectedBlockId = useProjectStore((s) => s.selectedBlockId);
+  const selectBlock = useProjectStore((s) => s.selectBlock);
+  const selectedBlockId = useProjectStore((s) => s.selection.selectedBlockId);
 
   const [dragState, setDragState] = useState(null);
   const blockRef = useRef(null); // A stable reference to the main block element
@@ -30,7 +30,7 @@ const TimelineBlock = ({ block, containerRef, laneLabelWidthPx = 0 }) => {
     e.stopPropagation(); // Prevent timeline click handler
     
     // Ticket #08: select block on pointer down
-    setSelectedBlockId(block.id);
+    selectBlock(block.id);
     
     const captureEl = blockRef.current;
     if (!captureEl || !containerRef.current) return;
@@ -123,7 +123,7 @@ const TimelineBlock = ({ block, containerRef, laneLabelWidthPx = 0 }) => {
     height: `${laneHeightPx}px`,
     zIndex: isDrafting ? (Z_INDEX.blocks + 1) : Z_INDEX.blocks,
     backgroundColor: isCurrentlyValid ? 'rgba(99, 102, 241, 0.7)' : 'rgba(239, 68, 68, 0.7)',
-    border: `1px solid ${isCurrentlyValid ? 'rgba(99, 102, 241, 1)' : 'rgba(239, 68, 68, 1)'}',
+    border: `1px solid ${isCurrentlyValid ? 'rgba(99, 102, 241, 1)' : 'rgba(239, 68, 68, 1)'}`,
     borderRadius: '4px',
     outline: selectedBlockId === block.id ? '2px solid rgba(255,255,255,0.9)' : 'none',
     outlineOffset: '1px',

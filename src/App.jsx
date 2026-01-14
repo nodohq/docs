@@ -30,8 +30,8 @@ export default function App() {
 
   const playheadBeat = useProjectStore((s) => s.timeline.playheadBeat);
   const setPlayheadBeat = useProjectStore((s) => s.setPlayheadBeat);
-  const selectedBlockId = useProjectStore((s) => s.selectedBlockId);
-  const setSelectedBlockId = useProjectStore((s) => s.setSelectedBlockId);
+  const selectBlock = useProjectStore((s) => s.selectBlock);
+  const selectedBlockId = useProjectStore((s) => s.selection.selectedBlockId);
 
   const timelineContainerRef = useRef(null);
   const [timelineWidth, setTimelineWidth] = useState(0);
@@ -69,7 +69,7 @@ export default function App() {
     // If the click is on a block, the block will handle it.
     // Otherwise, we're deselecting.
     if (!e.target.closest('[data-block-id]')) {
-      setSelectedBlockId(null);
+      selectBlock(null);
     }
 
     const localX = getLocalTimelineX(e.clientX);
