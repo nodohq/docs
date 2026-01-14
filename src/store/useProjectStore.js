@@ -1,19 +1,19 @@
 import { create } from "zustand";
+import { clampZoom } from "../utils/projection";
 
 /**
  * Ticket #02 — Beat-Atomic store
- * - Unité interne: beat (entier)
- * - Conversions beat <-> pixels (zoom constant)
- * - Sélection de track
+ * - Internal unit: beat (integer)
+ * - Projection logic is handled by `src/utils/projection.js`
+ * - State is persisted via a subscriber in `src/storage/`
  *
- * PAS DE LOGIQUE TIMELINE (snapping/collisions) ici.
- * PAS DE PERSISTENCE ici.
+ * This store should NOT contain projection logic (beat<->px), snapping, or collision detection.
  */
 
 const DEFAULT = {
-  bpmLocked: 126, // référence globale (affichage uniquement)
+  bpmLocked: 126, // Global reference (display only)
   zoom: {
-    pxPerBeat: 2, // zoom constant
+    pxPerBeat: 2, // Default zoom level
   },
   selection: {
     selectedTrackId: null,
@@ -30,28 +30,27 @@ const DEFAULT = {
   },
 };
 
-function toIntBeat(n) {
-  if (!Number.isFinite(n)) return 0;
-  return Math.max(0, Math.round(n));
-}
-
 export const useProjectStore = create((set, get) => ({
   ...DEFAULT,
 
-  // --- Conversions ---
-  beatToPx: (beat) => {
-    return toIntBeat(beat) * get().zoom.pxPerBeat;
-  },
-
-  pxToBeat: (px) => {
-    const p = Number.isFinite(px) ? px : 0;
-    return toIntBeat(p / get().zoom.pxPerBeat);
+  // --- Zoom ---
+  setPxPerBeat: (newPxPerBeat) => {
+    set((state) => ({
+      // Create a new zoom object for immutability, ensuring persistence works
+      zoom: {
+        ...state.zoom,
+        pxPerBeat: clampZoom(newPxPerBeat),
+      },
+    }));
   },
 
   // --- Selection ---
   selectTrack: (trackId) => {
     const exists = get().tracks.some((t) => t.id === trackId);
-    set({ selection: { selectedTrackId: exists ? trackId : null } });
+    set(state => ({
+        // Create a new selection object
+        selection: { ...state.selection, selectedTrackId: exists ? trackId : null }
+    }));
   },
 
   getSelectedTrack: () => {
@@ -59,35 +58,22 @@ export const useProjectStore = create((set, get) => ({
     return get().tracks.find((t) => t.id === id) ?? null;
   },
 
-  // --- Mutations simples ---
+  // --- Mutations ---
   updateTrackMeta: (trackId, patch) => {
     set((state) => ({
+      // Create a new tracks array
       tracks: state.tracks.map((t) =>
         t.id === trackId ? { ...t, ...patch } : t
       ),
     }));
   },
 
-  setPxPerBeat: (pxPerBeat) => {
-    set((state) => {
-      const v = Number.isFinite(pxPerBeat)
-        ? pxPerBeat
-        : state.zoom.pxPerBeat;
-
-      return {
-        zoom: {
-          ...state.zoom,
-          pxPerBeat: Math.max(0.25, v),
-        },
-      };
-    });
-  },
-
+  // --- Hydration from IndexedDB ---
   hydrateFromStorage: (data) => {
     if (!data || typeof data !== "object") return;
 
     set((state) => ({
-      // on garde les fonctions/actions existantes, on ne remplace que les data
+      // Only replace data, keep actions
       bpmLocked: data.bpmLocked ?? state.bpmLocked,
       zoom: data.zoom ?? state.zoom,
       selection: data.selection ?? state.selection,

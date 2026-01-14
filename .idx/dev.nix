@@ -26,11 +26,9 @@
       enable = true;
       previews = {
         web = {
-          command = ["npm" "run" "dev"];
+          command = ["npm" "run" "dev:idx"];
           manager = "web";
-          env = {
-            PORT = "$PORT";
-          };
+          env = { PORT = "$PORT"; };
         };
       };
     };

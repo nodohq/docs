@@ -349,3 +349,638 @@
 [info] ✔  Wrote dist/index.html 
 [info] ✔  Wrote configuration info to firebase.json 
 [info] ✔  Wrote project information to .firebaserc 
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:06:44.138Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:06:44.140Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:06:44.142Z] Checked if tokens are valid: false, expires at: 1768403615478
+[debug] [2026-01-14T15:06:44.143Z] Checked if tokens are valid: false, expires at: 1768403615478
+[debug] [2026-01-14T15:06:44.144Z] > refreshing access token with scopes: []
+[debug] [2026-01-14T15:06:44.147Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-01-14T15:06:44.147Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-14T15:06:44.232Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:06:44.233Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:06:44.234Z] Checked if tokens are valid: false, expires at: 1768403615478
+[debug] [2026-01-14T15:06:44.234Z] Checked if tokens are valid: false, expires at: 1768403615478
+[debug] [2026-01-14T15:06:44.235Z] > refreshing access token with scopes: []
+[debug] [2026-01-14T15:06:44.236Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-01-14T15:06:44.236Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-14T15:06:44.321Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-01-14T15:06:44.331Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-14T15:06:44.391Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:06:44.412Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-01-14T15:06:44.415Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-01-14T15:06:44.473Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:06:44.679Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:06:44.681Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-14T15:06:44.716Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.717Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.718Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.718Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.718Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.719Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.719Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.719Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.720Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.720Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.721Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.721Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.722Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.722Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.771Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.771Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.772Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [none]
+[debug] [2026-01-14T15:06:44.772Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:44.777Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/storage.googleapis.com [none]
+[debug] [2026-01-14T15:06:44.778Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/storage.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:44.782Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-14T15:06:44.782Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:44.785Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/identitytoolkit.googleapis.com [none]
+[debug] [2026-01-14T15:06:44.785Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/identitytoolkit.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:44.789Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/fcm.googleapis.com [none]
+[debug] [2026-01-14T15:06:44.789Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/fcm.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:44.793Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-01-14T15:06:44.793Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:44.797Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2026-01-14T15:06:44.797Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseremoteconfig.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:44.801Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-14T15:06:44.801Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:44.949Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:06:44.949Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-14T15:06:44.953Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.953Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.954Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.955Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.958Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.958Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.959Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.959Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.960Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.960Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.961Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.961Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.961Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.962Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.983Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.983Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:44.985Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [none]
+[debug] [2026-01-14T15:06:44.986Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:44.993Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/storage.googleapis.com [none]
+[debug] [2026-01-14T15:06:44.994Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/storage.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:45.000Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-14T15:06:45.000Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:45.006Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/identitytoolkit.googleapis.com [none]
+[debug] [2026-01-14T15:06:45.006Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/identitytoolkit.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:45.011Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/fcm.googleapis.com [none]
+[debug] [2026-01-14T15:06:45.011Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/fcm.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:45.029Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-01-14T15:06:45.029Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:45.034Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseremoteconfig.googleapis.com [none]
+[debug] [2026-01-14T15:06:45.035Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseremoteconfig.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:45.037Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-14T15:06:45.037Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:06:45.200Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/identitytoolkit.googleapis.com 200
+[debug] [2026-01-14T15:06:45.202Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:45.514Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-14T15:06:45.516Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:45.633Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseremoteconfig.googleapis.com 200
+[debug] [2026-01-14T15:06:45.635Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:45.730Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-14T15:06:45.731Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:45.766Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-14T15:06:45.768Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:45.784Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/fcm.googleapis.com 200
+[debug] [2026-01-14T15:06:45.788Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/fcm.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:45.871Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/storage.googleapis.com 200
+[debug] [2026-01-14T15:06:45.873Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/storage.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:45.931Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com 200
+[debug] [2026-01-14T15:06:45.932Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:45.933Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com 200
+[debug] [2026-01-14T15:06:45.933Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:06:45.966Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:06:45.966Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:06:45.966Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:45.967Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:45.967Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:06:45.974Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-14T15:06:45.975Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:45.975Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/storage.googleapis.com 200
+[debug] [2026-01-14T15:06:45.976Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/storage.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:46.033Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseremoteconfig.googleapis.com 200
+[debug] [2026-01-14T15:06:46.034Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseremoteconfig.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:46.079Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/fcm.googleapis.com 200
+[debug] [2026-01-14T15:06:46.079Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/fcm.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:46.120Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com 200
+[debug] [2026-01-14T15:06:46.123Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:46.132Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/identitytoolkit.googleapis.com 200
+[debug] [2026-01-14T15:06:46.132Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/identitytoolkit.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:46.159Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com 200
+[debug] [2026-01-14T15:06:46.159Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2026-01-14T15:06:46.180Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:06:46.182Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:06:46.208Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:06:46.208Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:06:46.258Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:06:46.261Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:06:46.261Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:46.261Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:46.261Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:06:46.283Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:06:46.283Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:06:46.283Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:46.283Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:06:46.284Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:06:46.507Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:06:46.509Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:06:46.531Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:06:46.531Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:06:46.554Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:06:46.554Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:06:46.570Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:06:46.571Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:16:31.388Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:16:31.390Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:16:31.392Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.393Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.393Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:16:31.393Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:16:31.394Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.394Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.396Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:16:31.473Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:16:31.704Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:16:31.705Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-14T15:16:31.740Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.741Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.743Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.743Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.745Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.746Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.773Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.774Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.774Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [none]
+[debug] [2026-01-14T15:16:31.774Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:16:31.780Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-14T15:16:31.780Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:16:31.784Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-01-14T15:16:31.785Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:16:31.787Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-14T15:16:31.788Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:16:31.982Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:16:31.983Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-14T15:16:31.986Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.986Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.987Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.987Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.988Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:31.988Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:32.001Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:32.002Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:32.003Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [none]
+[debug] [2026-01-14T15:16:32.003Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:16:32.007Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-14T15:16:32.007Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:16:32.014Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-01-14T15:16:32.015Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:16:32.019Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-14T15:16:32.019Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:16:32.671Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com 200
+[debug] [2026-01-14T15:16:32.675Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2026-01-14T15:16:32.712Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-14T15:16:32.714Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-14T15:16:32.743Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com 200
+[debug] [2026-01-14T15:16:32.743Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [omitted]
+[debug] [2026-01-14T15:16:32.768Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-14T15:16:32.773Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:16:32.793Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:16:32.793Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:16:32.793Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:32.793Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:32.794Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:16:32.834Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-14T15:16:32.837Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-14T15:16:32.860Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com 200
+[debug] [2026-01-14T15:16:32.860Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2026-01-14T15:16:32.878Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com 200
+[debug] [2026-01-14T15:16:32.879Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [omitted]
+[debug] [2026-01-14T15:16:32.882Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-14T15:16:32.882Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-14T15:16:32.967Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:16:32.968Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:16:32.990Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:16:32.991Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:16:33.054Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:16:33.054Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:16:33.055Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:33.055Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:33.055Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:16:33.070Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:16:33.070Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:16:33.071Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:33.071Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:16:33.071Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:16:33.209Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:16:33.210Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:16:33.230Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:16:33.231Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:16:33.259Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:16:33.263Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:16:33.279Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:16:33.279Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:33.177Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:33.179Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:18:33.184Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.187Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.188Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:33.188Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:18:33.189Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.189Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.193Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:18:33.248Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:18:33.520Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:18:33.522Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-14T15:18:33.543Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.543Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.544Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.544Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.546Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.546Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.584Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.584Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.585Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [none]
+[debug] [2026-01-14T15:18:33.585Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:18:33.588Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-14T15:18:33.589Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:18:33.592Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-01-14T15:18:33.592Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:18:33.596Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-14T15:18:33.596Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:18:33.682Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:18:33.688Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-14T15:18:33.689Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.692Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.693Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.693Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.694Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.697Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.708Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.708Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:33.708Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [none]
+[debug] [2026-01-14T15:18:33.708Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:18:33.711Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-14T15:18:33.711Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:18:33.714Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-01-14T15:18:33.714Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:18:33.717Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-14T15:18:33.717Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:18:34.387Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com 200
+[debug] [2026-01-14T15:18:34.398Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2026-01-14T15:18:34.441Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com 200
+[debug] [2026-01-14T15:18:34.441Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [omitted]
+[debug] [2026-01-14T15:18:34.448Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-14T15:18:34.451Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-14T15:18:34.457Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-14T15:18:34.458Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:34.477Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:34.478Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:18:34.478Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:34.478Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:34.479Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:18:34.516Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com 200
+[debug] [2026-01-14T15:18:34.516Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [omitted]
+[debug] [2026-01-14T15:18:34.530Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-14T15:18:34.531Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-14T15:18:34.539Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-14T15:18:34.539Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-14T15:18:34.567Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com 200
+[debug] [2026-01-14T15:18:34.567Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2026-01-14T15:18:34.636Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:18:34.636Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:34.640Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:34.640Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:34.675Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:34.675Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:18:34.678Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:34.678Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:34.678Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:34.689Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:34.689Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:18:34.689Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:34.689Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:34.690Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:18:34.845Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:18:34.858Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:34.868Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:34.868Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:18:34.881Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:18:34.881Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:34.893Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:34.893Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:47.861Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:47.861Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:18:47.861Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:47.861Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:18:47.862Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:47.862Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:47.862Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:47.862Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:47.862Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:18:47.871Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:18:48.068Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:18:48.071Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:48.082Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:48.082Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:18:48.126Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:18:48.127Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:48.135Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:48.136Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:57.809Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:57.819Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:18:57.820Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:57.820Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:57.820Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:57.834Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:57.835Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:18:57.835Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:57.835Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:18:57.835Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:18:58.095Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:18:58.096Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:58.100Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:58.101Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:18:58.437Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:18:58.437Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:18:58.450Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:18:58.452Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:24:24.229Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:24:24.231Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:24:24.233Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.233Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.234Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:24:24.234Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:24:24.235Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.235Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.237Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:24:24.320Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:24:24.598Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:24:24.600Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-14T15:24:24.620Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.621Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.622Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.622Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.623Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.623Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.647Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.647Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.647Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [none]
+[debug] [2026-01-14T15:24:24.648Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:24:24.652Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-14T15:24:24.652Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:24:24.654Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-01-14T15:24:24.655Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:24:24.657Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-14T15:24:24.657Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:24:24.934Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:24:24.934Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-14T15:24:24.935Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.935Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.936Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.936Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.936Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.937Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.959Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.959Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:24.959Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [none]
+[debug] [2026-01-14T15:24:24.960Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:24:24.962Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-14T15:24:24.963Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:24:24.965Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-01-14T15:24:24.966Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:24:24.969Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-14T15:24:24.969Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:24:25.045Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-14T15:24:25.045Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-14T15:24:25.439Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-14T15:24:25.439Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-14T15:24:25.461Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com 200
+[debug] [2026-01-14T15:24:25.462Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [omitted]
+[debug] [2026-01-14T15:24:25.478Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com 200
+[debug] [2026-01-14T15:24:25.478Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:24:25.497Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:24:25.498Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:24:25.498Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:25.498Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:25.498Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:24:25.742Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-14T15:24:25.743Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-14T15:24:25.769Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:24:25.769Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:24:25.773Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:24:25.773Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:24:25.803Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com 200
+[debug] [2026-01-14T15:24:25.804Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [omitted]
+[debug] [2026-01-14T15:24:25.811Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-14T15:24:25.811Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-14T15:24:25.815Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com 200
+[debug] [2026-01-14T15:24:25.815Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:24:25.844Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:24:25.846Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:24:25.846Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:24:25.846Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:24:25.847Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:25.848Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:25.848Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:25.848Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:24:25.848Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:24:25.849Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:24:26.085Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:24:26.086Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:24:26.091Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:24:26.091Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:24:26.116Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:24:26.117Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:24:26.125Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:24:26.125Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:27:10.590Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:27:10.591Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:27:10.593Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:10.594Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:10.594Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:27:10.595Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:27:10.596Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:10.596Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:10.599Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:27:10.683Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:27:10.987Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:27:10.988Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-14T15:27:11.003Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.004Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.007Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.007Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.008Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.008Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.029Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.030Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.030Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [none]
+[debug] [2026-01-14T15:27:11.030Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:27:11.034Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-14T15:27:11.034Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:27:11.037Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-01-14T15:27:11.037Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:27:11.040Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-14T15:27:11.041Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:27:11.302Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:27:11.303Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[debug] [2026-01-14T15:27:11.306Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.306Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.307Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.307Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.307Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.307Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.330Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.330Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:11.331Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [none]
+[debug] [2026-01-14T15:27:11.331Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:27:11.334Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [none]
+[debug] [2026-01-14T15:27:11.334Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:27:11.336Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [none]
+[debug] [2026-01-14T15:27:11.337Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:27:11.339Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [none]
+[debug] [2026-01-14T15:27:11.340Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com x-goog-quota-user=projects/dj-architect-56624600-c142a
+[debug] [2026-01-14T15:27:11.807Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-14T15:27:11.807Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-14T15:27:11.826Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-14T15:27:11.826Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-14T15:27:11.860Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com 200
+[debug] [2026-01-14T15:27:11.861Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [omitted]
+[debug] [2026-01-14T15:27:11.881Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com 200
+[debug] [2026-01-14T15:27:11.885Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2026-01-14T15:27:12.101Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com 200
+[debug] [2026-01-14T15:27:12.102Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebasedataconnect.googleapis.com [omitted]
+[debug] [2026-01-14T15:27:12.124Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com 200
+[debug] [2026-01-14T15:27:12.124Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firebaseapphosting.googleapis.com [omitted]
+[debug] [2026-01-14T15:27:12.134Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com 200
+[debug] [2026-01-14T15:27:12.134Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2026-01-14T15:27:12.155Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com 200
+[debug] [2026-01-14T15:27:12.157Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/dj-architect-56624600-c142a/services/firestore.googleapis.com [omitted]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:27:12.170Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:27:12.170Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:27:12.170Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:12.170Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:12.173Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:27:12.632Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:27:12.636Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:27:12.644Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:27:12.644Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:27:12.688Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:27:12.688Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:27:12.688Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:12.689Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:12.690Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:27:12.703Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:27:12.703Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:27:12.703Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:12.703Z] Checked if tokens are valid: true, expires at: 1768406803415
+[debug] [2026-01-14T15:27:12.703Z] >>> [apiv2][query] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo [none]
+[debug] [2026-01-14T15:27:12.834Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:27:12.834Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:27:12.842Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:27:12.842Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
+[debug] [2026-01-14T15:27:12.858Z] <<< [apiv2][status] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo 200
+[debug] [2026-01-14T15:27:12.858Z] <<< [apiv2][body] GET https://cloudbilling.googleapis.com/v1/projects/dj-architect-56624600-c142a/billingInfo {"name":"projects/dj-architect-56624600-c142a/billingInfo","projectId":"dj-architect-56624600-c142a","billingAccountName":"","billingEnabled":false}
+[error] Failed to fetch Firebase Project from Studio Workspace because WORKSPACE_SLUG environment variable is empty
+[debug] [2026-01-14T15:27:12.867Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/userinfo.email"]
+[debug] [2026-01-14T15:27:12.867Z] > authorizing via signed-in user (jean.desfontaines@gmail.com)
