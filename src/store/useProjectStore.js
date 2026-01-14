@@ -1,3 +1,4 @@
+
 import { create } from "zustand";
 import { clampZoom } from "../utils/projection";
 import { snapBeatToBeat } from "../utils/snap";
@@ -25,6 +26,35 @@ const DEFAULT = {
 
 export const useProjectStore = create((set, get) => ({
   ...DEFAULT,
+
+  // --- Block creation (Ticket #05) ---
+  createBlockFromTrack: (trackId, startBeat) => {
+    set(state => {
+      const trackExists = state.tracks.some(t => t.id === trackId);
+      if (!trackExists) {
+        return state; // real no-op
+      }
+
+      const id =
+        (typeof crypto !== "undefined" && crypto.randomUUID)
+          ? crypto.randomUUID()
+          : `b_${Date.now()}_${Math.random()}`;
+      
+      const newBlock = {
+        id,
+        trackId,
+        startBeat: snapBeatToBeat(startBeat),
+        lengthBeats: 512,
+      };
+
+      return {
+        timeline: {
+          ...state.timeline,
+          blocks: [...state.timeline.blocks, newBlock],
+        },
+      };
+    });
+  },
 
   // --- Playhead (Ticket #04) ---
   setPlayheadBeat: (beat) => {
@@ -77,7 +107,6 @@ export const useProjectStore = create((set, get) => ({
       zoom: data.zoom ?? state.zoom,
       selection: data.selection ?? state.selection,
       tracks: data.tracks ?? state.tracks,
-      // Ticket #04: Ensure timeline object (including playhead) is hydrated
       timeline: data.timeline ?? state.timeline,
     }));
   },

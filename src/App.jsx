@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useProjectStore } from "./store/useProjectStore";
 import { loadProjectState } from "./storage/projectDb";
 import { subscribeProjectPersistence } from "./storage/subscribeProjectPersistence";
-import { beatToPx, pxToBeat } from "./utils/projection";
+import { beatToPx } from "./utils/projection";
 import { snapPxToBeat } from "./utils/snap";
 import Debug from "./components/Debug";
 import BeatGrid from "./components/BeatGrid";
@@ -12,17 +12,18 @@ export default function App() {
   const hydrateFromStorage = useProjectStore((s) => s.hydrateFromStorage);
 
   // --- Store State ---
+  const tracks = useProjectStore((s) => s.tracks);
+  const blocks = useProjectStore((s) => s.timeline.blocks);
+  const createBlockFromTrack = useProjectStore((s) => s.createBlockFromTrack);
   const pxPerBeat = useProjectStore((s) => s.zoom.pxPerBeat);
   const setPxPerBeat = useProjectStore((s) => s.setPxPerBeat);
   const playheadBeat = useProjectStore((s) => s.timeline.playheadBeat);
   const setPlayheadBeat = useProjectStore((s) => s.setPlayheadBeat);
 
-  // --- Ticket #04: Timeline container size for grid rendering ---
   const timelineContainerRef = useRef(null);
   const [timelineWidth, setTimelineWidth] = useState(0);
 
   useEffect(() => {
-    // Load state and set up persistence
     let stopPersistence = null;
     (async () => {
       const saved = await loadProjectState();
@@ -30,7 +31,6 @@ export default function App() {
       stopPersistence = subscribeProjectPersistence(useProjectStore);
     })();
 
-    // Set up ResizeObserver for timeline width
     const observer = new ResizeObserver(entries => {
       if (entries[0]) {
         setTimelineWidth(entries[0].contentRect.width);
@@ -46,7 +46,6 @@ export default function App() {
     };
   }, [hydrateFromStorage]);
 
-  // --- Ticket #04: Click handler for playhead ---
   const handleTimelineClick = (e) => {
     if (!timelineContainerRef.current) return;
     const rect = timelineContainerRef.current.getBoundingClientRect();
@@ -55,10 +54,22 @@ export default function App() {
     setPlayheadBeat(newBeat);
   };
 
-  // --- Debug Info ---
-  const beatTestValue = 128;
-  const pxTestValue = beatToPx(beatTestValue, pxPerBeat);
-  const roundtripBeat = pxToBeat(pxTestValue, pxPerBeat);
+  // --- Ticket #05: Drag and Drop Handlers ---
+  const handleDragOver = (e) => {
+    e.preventDefault(); // Allow drop
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    if (!timelineContainerRef.current) return;
+
+    const trackId = e.dataTransfer.getData("text/plain");
+    const rect = timelineContainerRef.current.getBoundingClientRect();
+    const localX = (e.clientX - rect.left) + timelineContainerRef.current.scrollLeft;
+    const beat = snapPxToBeat(localX, pxPerBeat);
+
+    createBlockFromTrack(trackId, beat);
+  };
 
   return (
     <div
@@ -69,7 +80,21 @@ export default function App() {
       }}
     >
       <aside style={{ borderRight: "1px solid #222", padding: 16 }}>
-        {/* ... Library ... */}
+        <h3>Library</h3>
+        {tracks.map((track) => (
+          <div
+            key={track.id}
+            draggable={true}
+            onDragStart={(e) => {
+              e.dataTransfer.setData("text/plain", track.id);
+              e.dataTransfer.effectAllowed = "copy";
+            }}
+            style={{ padding: '8px', border: '1px solid #444', marginBottom: '8px', cursor: 'grab' }}
+          >
+            <div>{track.title}</div>
+            <div style={{ fontSize: '12px', color: '#888' }}>{track.artist}</div>
+          </div>
+        ))}
       </aside>
 
       <main style={{ overflow: "hidden", display: "flex", flexDirection: "column" }}>
@@ -83,14 +108,31 @@ export default function App() {
           </div>
         </div>
 
-        {/* --- TIMELINE CONTENT (Ticket #04) --- */}
         <div 
           ref={timelineContainerRef} 
           onClick={handleTimelineClick}
+          onDragOver={handleDragOver}
+          onDrop={handleDrop}
           style={{ flexGrow: 1, position: 'relative', overflowX: 'auto', cursor: 'pointer' }}
         >
           <BeatGrid width={timelineWidth} />
           
+          {/* Render Blocks */}
+          {blocks.map(block => (
+            <div key={block.id} style={{
+              position: 'absolute',
+              left: beatToPx(block.startBeat, pxPerBeat),
+              width: beatToPx(block.lengthBeats, pxPerBeat),
+              top: '40px', // Simple static offset for now
+              height: '60px',
+              backgroundColor: 'rgba(99, 102, 241, 0.7)',
+              border: '1px solid rgba(99, 102, 241, 1)',
+              borderRadius: '4px',
+            }}>
+              <span style={{color: 'white', padding: '4px'}}>{block.trackId}</span>
+            </div>
+          ))}
+
           {/* Playhead Marker */}
           <div style={{
             position: 'absolute',
