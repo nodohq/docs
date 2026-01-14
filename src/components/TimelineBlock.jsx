@@ -4,13 +4,21 @@ import { useProjectStore } from '../store/useProjectStore';
 import { beatToPx } from '../utils/projection';
 import { snapPxToBeat, snapBeatToBeat } from '../utils/snap';
 import { isPlacementValid, MIN_BLOCK_LEN_BEATS } from '../utils/collisions';
+import { Z_INDEX } from '../constants';
 
-const TimelineBlock = ({ block, containerRef }) => {
+const TimelineBlock = ({ block, containerRef, laneLabelWidthPx = 0 }) => {
   // Separate selectors to prevent re-render loops (React 18 + Zustand)
   const moveBlock = useProjectStore((s) => s.moveBlock);
   const resizeBlock = useProjectStore((s) => s.resizeBlock);
   const blocks = useProjectStore((s) => s.timeline.blocks);
   const pxPerBeat = useProjectStore((s) => s.zoom.pxPerBeat);
+
+  // Ticket #07: lanes
+  const getLaneTopPx = useProjectStore((s) => s.getLaneTopPx);
+  const laneHeightPx = useProjectStore((s) => s.timeline.layout.laneHeightPx);
+  // optional but useful: highlight/select block
+  const selectBlock = useProjectStore((s) => s.selectBlock);
+  const selectedBlockId = useProjectStore((s) => s.selection.selectedBlockId);
 
   const [dragState, setDragState] = useState(null);
   const blockRef = useRef(null); // A stable reference to the main block element
@@ -26,7 +34,8 @@ const TimelineBlock = ({ block, containerRef }) => {
     captureEl.setPointerCapture(e.pointerId); // Capture on the main element
 
     const rect = containerRef.current.getBoundingClientRect();
-    const localX = (e.clientX - rect.left) + containerRef.current.scrollLeft;
+    const computedX = (e.clientX - rect.left) + containerRef.current.scrollLeft - laneLabelWidthPx;
+    const localX = Math.max(0, computedX);
 
     setDragState({
       id: block.id,
@@ -44,7 +53,8 @@ const TimelineBlock = ({ block, containerRef }) => {
     if (!dragState || !containerRef.current) return;
 
     const rect = containerRef.current.getBoundingClientRect();
-    const localX = (e.clientX - rect.left) + containerRef.current.scrollLeft;
+    const computedX = (e.clientX - rect.left) + containerRef.current.scrollLeft - laneLabelWidthPx;
+    const localX = Math.max(0, computedX);
 
     if (dragState.mode === 'move') {
       const newStartBeat = snapPxToBeat(localX - dragState.offsetPx, pxPerBeat);
@@ -105,11 +115,14 @@ const TimelineBlock = ({ block, containerRef }) => {
     position: 'absolute',
     left: beatToPx(displayStartBeat, pxPerBeat),
     width: beatToPx(displayLengthBeats, pxPerBeat),
-    top: '40px',
-    height: '60px',
+    top: `${getLaneTopPx(block.trackId)}px`,
+    height: `${laneHeightPx}px`,
+    zIndex: isDrafting ? (Z_INDEX.blocks + 1) : Z_INDEX.blocks,
     backgroundColor: isCurrentlyValid ? 'rgba(99, 102, 241, 0.7)' : 'rgba(239, 68, 68, 0.7)',
     border: `1px solid ${isCurrentlyValid ? 'rgba(99, 102, 241, 1)' : 'rgba(239, 68, 68, 1)'}`,
     borderRadius: '4px',
+    outline: selectedBlockId === block.id ? '2px solid rgba(255,255,255,0.9)' : 'none',
+    outlineOffset: '1px',
     cursor: 'move',
     touchAction: 'none',
     boxSizing: 'border-box',
@@ -118,6 +131,7 @@ const TimelineBlock = ({ block, containerRef }) => {
   return (
     <div
       ref={blockRef}
+      onClick={() => selectBlock(block.id)}
       onPointerDown={(e) => handlePointerDown(e, 'move')}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
