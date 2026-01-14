@@ -57,6 +57,27 @@ export default function App() {
     };
   }, [hydrateFromStorage]);
 
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key !== "Delete" && e.key !== "Backspace") return;
+
+      const t = e.target;
+      const isTypingContext =
+        t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable);
+
+      if (isTypingContext) return;
+
+      const id = useProjectStore.getState().selection.selectedBlockId;
+      if (!id) return;
+
+      e.preventDefault();
+      useProjectStore.getState().deleteBlock(id);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   const getLocalTimelineX = (clientX) => {
     if (!timelineContainerRef.current) return 0;
     const rect = timelineContainerRef.current.getBoundingClientRect();

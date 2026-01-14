@@ -193,6 +193,26 @@ export const useProjectStore = create((set, get) => ({
     });
   },
 
+  deleteBlock: (blockId) => {
+    set((state) => {
+      if (blockId == null) return state;
+  
+      const exists = state.timeline.blocks.some((b) => b.id === blockId);
+      if (!exists) return state;
+  
+      return {
+        timeline: {
+          ...state.timeline,
+          blocks: state.timeline.blocks.filter((b) => b.id !== blockId),
+        },
+        selection: {
+          selectedTrackId: null,
+          selectedBlockId: null,
+        },
+      };
+    });
+  },
+
   setPlayheadBeat: (beat) => {
     set((state) => ({
       timeline: {

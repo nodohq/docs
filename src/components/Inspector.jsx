@@ -6,6 +6,7 @@ export default function Inspector() {
   const selectedTrack = useProjectStore((s) => s.getSelectedTrack());
   const updateBlock = useProjectStore((s) => s.updateBlock);
   const updateTrackMeta = useProjectStore((s) => s.updateTrackMeta);
+  const deleteBlock = useProjectStore((s) => s.deleteBlock);
 
   const [draftBlock, setDraftBlock] = useState(selectedBlock);
   const [draftTrack, setDraftTrack] = useState(selectedTrack);
@@ -110,6 +111,23 @@ export default function Inspector() {
           </select>
         </div>
         {validationError && <div style={{ color: 'red', marginTop: 10, fontSize: 12 }}>{validationError}</div>}
+        <div style={{ marginTop: 24, borderTop: "1px solid #333", paddingTop: 16 }}>
+          <button
+            onClick={() => deleteBlock(draftBlock.id)}
+            style={{
+              width: "100%",
+              padding: "8px 10px",
+              border: "1px solid #a33",
+              background: "#2a0000",
+              color: "#f88",
+              cursor: "pointer",
+              fontWeight: "bold",
+              borderRadius: "4px"
+            }}
+          >
+            Delete Block
+          </button>
+        </div>
       </div>
     );
   }
