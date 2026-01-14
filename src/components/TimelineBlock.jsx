@@ -16,9 +16,10 @@ const TimelineBlock = ({ block, containerRef, laneLabelWidthPx = 0 }) => {
   // Ticket #07: lanes
   const getLaneTopPx = useProjectStore((s) => s.getLaneTopPx);
   const laneHeightPx = useProjectStore((s) => s.timeline.layout.laneHeightPx);
-  // optional but useful: highlight/select block
-  const selectBlock = useProjectStore((s) => s.selectBlock);
-  const selectedBlockId = useProjectStore((s) => s.selection.selectedBlockId);
+  
+  // Ticket #08: selection
+  const setSelectedBlockId = useProjectStore((s) => s.setSelectedBlockId);
+  const selectedBlockId = useProjectStore((s) => s.selectedBlockId);
 
   const [dragState, setDragState] = useState(null);
   const blockRef = useRef(null); // A stable reference to the main block element
@@ -27,6 +28,9 @@ const TimelineBlock = ({ block, containerRef, laneLabelWidthPx = 0 }) => {
 
   const handlePointerDown = (e, mode) => {
     e.stopPropagation(); // Prevent timeline click handler
+    
+    // Ticket #08: select block on pointer down
+    setSelectedBlockId(block.id);
     
     const captureEl = blockRef.current;
     if (!captureEl || !containerRef.current) return;
@@ -119,7 +123,7 @@ const TimelineBlock = ({ block, containerRef, laneLabelWidthPx = 0 }) => {
     height: `${laneHeightPx}px`,
     zIndex: isDrafting ? (Z_INDEX.blocks + 1) : Z_INDEX.blocks,
     backgroundColor: isCurrentlyValid ? 'rgba(99, 102, 241, 0.7)' : 'rgba(239, 68, 68, 0.7)',
-    border: `1px solid ${isCurrentlyValid ? 'rgba(99, 102, 241, 1)' : 'rgba(239, 68, 68, 1)'}`,
+    border: `1px solid ${isCurrentlyValid ? 'rgba(99, 102, 241, 1)' : 'rgba(239, 68, 68, 1)'}',
     borderRadius: '4px',
     outline: selectedBlockId === block.id ? '2px solid rgba(255,255,255,0.9)' : 'none',
     outlineOffset: '1px',
@@ -131,7 +135,7 @@ const TimelineBlock = ({ block, containerRef, laneLabelWidthPx = 0 }) => {
   return (
     <div
       ref={blockRef}
-      onClick={() => selectBlock(block.id)}
+      data-block-id={block.id}
       onPointerDown={(e) => handlePointerDown(e, 'move')}
       onPointerMove={handlePointerMove}
       onPointerUp={handlePointerUp}
@@ -141,6 +145,23 @@ const TimelineBlock = ({ block, containerRef, laneLabelWidthPx = 0 }) => {
       <span style={{ color: 'white', padding: '4px', pointerEvents: 'none', userSelect: 'none' }}>
         {block.trackId}
       </span>
+      {block.transition && block.transition !== 'cut' && (
+        <span
+          style={{
+            position: 'absolute',
+            top: '2px',
+            right: '10px',
+            backgroundColor: 'rgba(0,0,0,0.5)',
+            color: 'white',
+            fontSize: '10px',
+            padding: '1px 3px',
+            borderRadius: '3px',
+            pointerEvents: 'none',
+          }}
+        >
+          {block.transition.toUpperCase()}
+        </span>
+      )}
       <div
         onPointerDown={(e) => handlePointerDown(e, 'resize')}
         style={{

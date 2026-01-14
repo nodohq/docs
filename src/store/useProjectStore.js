@@ -1,8 +1,7 @@
-
 import { create } from "zustand";
 import { clampZoom } from "../utils/projection";
 import { snapBeatToBeat } from "../utils/snap";
-import { MIN_BLOCK_LEN_BEATS } from "../utils/collisions";
+import { isPlacementValid, MIN_BLOCK_LEN_BEATS } from "../utils/collisions";
 
 const DEFAULT = {
   bpmLocked: 126,
@@ -11,7 +10,7 @@ const DEFAULT = {
   },
   selection: {
     selectedTrackId: null,
-    selectedBlockId: null, // Ticket #07: optional (useful for inspector)
+    selectedBlockId: null,
   },
   tracks: [
     { id: "t1", title: "Call On Me", artist: "Eric Prydz", bpm: 126, key: "10A", energy: 0.55 },
@@ -19,24 +18,23 @@ const DEFAULT = {
   ],
   timeline: {
     blocks: [
-      { id: "b1", trackId: "t1", startBeat: 0, lengthBeats: 512 },
-      { id: "b2", trackId: "t2", startBeat: 480, lengthBeats: 512 },
+      { id: "b1", trackId: "t1", startBeat: 0, lengthBeats: 512, transition: "cut" },
+      { id: "b2", trackId: "t2", startBeat: 480, lengthBeats: 512, transition: "cut" },
     ],
     playheadBeat: 0,
-
-    // Ticket #07: lane layout (vertical rows by track)
     layout: {
-      headerTopPx: 40,      // aligns with your previous top: '40px'
-      laneHeightPx: 72,     // row height for a track lane
-      laneGapPx: 8,         // spacing between lanes
+      headerTopPx: 40,
+      laneHeightPx: 72,
+      laneGapPx: 8,
     },
   },
 };
 
+const TRANSITION_TYPES = ["cut", "fade", "crossfade"];
+
 export const useProjectStore = create((set, get) => ({
   ...DEFAULT,
 
-  // --- Ticket #07: Lane helpers (derived, no side effects) ---
   getTrackIndex: (trackId) => {
     const tracks = get().tracks;
     return tracks.findIndex((t) => t.id === trackId);
@@ -45,40 +43,10 @@ export const useProjectStore = create((set, get) => ({
   getLaneTopPx: (trackId) => {
     const { headerTopPx, laneHeightPx, laneGapPx } = get().timeline.layout;
     const idx = get().getTrackIndex(trackId);
-    if (idx < 0) return headerTopPx; // fallback
+    if (idx < 0) return headerTopPx;
     return headerTopPx + idx * (laneHeightPx + laneGapPx);
   },
 
-  setTimelineLayout: (patch) => {
-    set((state) => ({
-      timeline: {
-        ...state.timeline,
-        layout: { ...state.timeline.layout, ...patch },
-      },
-    }));
-  },
-
-  // Optional: track reordering for lanes (safe no-op if ids mismatch)
-  setTrackOrder: (orderedTrackIds) => {
-    set((state) => {
-      if (!Array.isArray(orderedTrackIds) || orderedTrackIds.length === 0) return state;
-
-      const byId = new Map(state.tracks.map((t) => [t.id, t]));
-      const next = [];
-      for (const id of orderedTrackIds) {
-        const t = byId.get(id);
-        if (t) next.push(t);
-      }
-      // append any missing tracks at end
-      for (const t of state.tracks) {
-        if (!orderedTrackIds.includes(t.id)) next.push(t);
-      }
-
-      return { tracks: next };
-    });
-  },
-
-  // --- Block Manipulation (Ticket #06) ---
   moveBlock: (blockId, nextStartBeat) => {
     set((state) => ({
       timeline: {
@@ -103,14 +71,65 @@ export const useProjectStore = create((set, get) => ({
     }));
   },
 
-  // --- Block creation (Ticket #05) ---
+  updateBlock: (blockId, patch) => {
+    set((state) => {
+      const blocks = state.timeline.blocks;
+      const block = blocks.find((b) => b.id === blockId);
+      if (!block) return state;
+
+      const cleanPatch = {};
+      let hasValidField = false;
+
+      if (patch.startBeat !== undefined && Number.isFinite(patch.startBeat)) {
+        cleanPatch.startBeat = patch.startBeat;
+        hasValidField = true;
+      }
+      if (patch.lengthBeats !== undefined && Number.isFinite(patch.lengthBeats)) {
+        cleanPatch.lengthBeats = patch.lengthBeats;
+        hasValidField = true;
+      }
+      if (patch.transition !== undefined && TRANSITION_TYPES.includes(patch.transition)) {
+        cleanPatch.transition = patch.transition;
+        hasValidField = true;
+      }
+
+      if (!hasValidField) return state;
+
+      const blockWithAppliedChanges = { ...block, ...cleanPatch };
+      
+      // Validate position and length together if either changed
+      if (cleanPatch.startBeat !== undefined || cleanPatch.lengthBeats !== undefined) {
+        const newStart = snapBeatToBeat(blockWithAppliedChanges.startBeat);
+        const newLength = snapBeatToBeat(blockWithAppliedChanges.lengthBeats);
+
+        if (
+          newLength < MIN_BLOCK_LEN_BEATS ||
+          !isPlacementValid(blocks, blockId, newStart, newLength)
+        ) {
+          // Revert position/length changes if invalid, but keep other valid fields
+          delete cleanPatch.startBeat;
+          delete cleanPatch.lengthBeats;
+          if (!cleanPatch.transition) return state; // No valid fields left
+        }
+      }
+
+      const finalBlock = { ...block, ...cleanPatch };
+
+      return {
+        timeline: {
+          ...state.timeline,
+          blocks: blocks.map((b) => (b.id === blockId ? finalBlock : b)),
+        },
+      };
+    });
+  },
+
   createBlockFromTrack: (trackId, startBeat) => {
     set((state) => {
       const trackExists = state.tracks.some((t) => t.id === trackId);
       if (!trackExists) return state;
 
-      const id =
-        typeof crypto !== "undefined" && crypto.randomUUID
+      const id = typeof crypto !== "undefined" && crypto.randomUUID
           ? crypto.randomUUID()
           : `b_${Date.now()}_${Math.random()}`;
 
@@ -119,6 +138,7 @@ export const useProjectStore = create((set, get) => ({
         trackId,
         startBeat: snapBeatToBeat(startBeat),
         lengthBeats: 512,
+        transition: "cut", // Default transition
       };
 
       return {
@@ -130,7 +150,6 @@ export const useProjectStore = create((set, get) => ({
     });
   },
 
-  // --- Playhead (Ticket #04) ---
   setPlayheadBeat: (beat) => {
     set((state) => ({
       timeline: {
@@ -140,25 +159,23 @@ export const useProjectStore = create((set, get) => ({
     }));
   },
 
-  // --- Zoom ---
   setPxPerBeat: (newPxPerBeat) => {
     set((state) => ({
       zoom: { ...state.zoom, pxPerBeat: clampZoom(newPxPerBeat) },
     }));
   },
 
-  // --- Selection ---
   selectTrack: (trackId) => {
     set((state) => {
       const exists = state.tracks.some((t) => t.id === trackId);
-      return { selection: { ...state.selection, selectedTrackId: exists ? trackId : null } };
+      return { selection: { selectedBlockId: null, selectedTrackId: exists ? trackId : null } };
     });
   },
 
   selectBlock: (blockId) => {
     set((state) => {
       const exists = state.timeline.blocks.some((b) => b.id === blockId);
-      return { selection: { ...state.selection, selectedBlockId: exists ? blockId : null } };
+      return { selection: { selectedTrackId: null, selectedBlockId: exists ? blockId : null } };
     });
   },
 
@@ -172,27 +189,41 @@ export const useProjectStore = create((set, get) => ({
     return get().timeline.blocks.find((b) => b.id === id) ?? null;
   },
 
-  // --- Mutations ---
   updateTrackMeta: (trackId, patch) => {
     set((state) => ({
       tracks: state.tracks.map((t) => (t.id === trackId ? { ...t, ...patch } : t)),
     }));
   },
 
-  // --- Hydration from IndexedDB ---
   hydrateFromStorage: (data) => {
     if (!data || typeof data !== "object") return;
 
-    set((state) => ({
-      bpmLocked: data.bpmLocked ?? state.bpmLocked,
-      zoom: data.zoom ?? state.zoom,
-      selection: data.selection ?? state.selection,
-      tracks: data.tracks ?? state.tracks,
-      timeline: {
-        ...state.timeline,
-        ...data.timeline,
-        layout: data.timeline?.layout ?? state.timeline.layout, // keep defaults if missing
-      },
-    }));
+    set((state) => {
+      const timelineIn = data.timeline;
+
+      const rawBlocks = timelineIn?.blocks ?? state.timeline.blocks;
+      const hydratedBlocks = rawBlocks.map((b) => ({
+        ...b,
+        transition: TRANSITION_TYPES.includes(b.transition) ? b.transition : "cut",
+      }));
+
+      return {
+        bpmLocked: data.bpmLocked ?? state.bpmLocked,
+        zoom: data.zoom ?? state.zoom,
+        selection: data.selection ?? state.selection,
+        tracks: data.tracks ?? state.tracks,
+        timeline: timelineIn
+          ? {
+              ...state.timeline,
+              ...timelineIn,
+              blocks: hydratedBlocks,
+              layout: {
+                ...state.timeline.layout,
+                ...(timelineIn.layout ?? {}),
+              },
+            }
+          : state.timeline,
+      };
+    });
   },
 }));

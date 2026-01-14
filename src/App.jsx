@@ -9,6 +9,7 @@ import BeatGrid from "./components/BeatGrid";
 import TimelineBlock from "./components/TimelineBlock";
 import TrackLanesOverlay from "./components/TrackLanesOverlay";
 import Playhead from "./components/Playhead";
+import Inspector from "./components/Inspector";
 
 export default function App() {
   const hydrateFromStorage = useProjectStore((s) => s.hydrateFromStorage);
@@ -29,6 +30,8 @@ export default function App() {
 
   const playheadBeat = useProjectStore((s) => s.timeline.playheadBeat);
   const setPlayheadBeat = useProjectStore((s) => s.setPlayheadBeat);
+  const selectedBlockId = useProjectStore((s) => s.selectedBlockId);
+  const setSelectedBlockId = useProjectStore((s) => s.setSelectedBlockId);
 
   const timelineContainerRef = useRef(null);
   const [timelineWidth, setTimelineWidth] = useState(0);
@@ -63,6 +66,12 @@ export default function App() {
   };
 
   const handleTimelineClick = (e) => {
+    // If the click is on a block, the block will handle it.
+    // Otherwise, we're deselecting.
+    if (!e.target.closest('[data-block-id]')) {
+      setSelectedBlockId(null);
+    }
+
     const localX = getLocalTimelineX(e.clientX);
     const newBeat = snapPxToBeat(localX, pxPerBeat);
     setPlayheadBeat(newBeat);
@@ -162,7 +171,7 @@ export default function App() {
       </main>
 
       <aside style={{ borderLeft: "1px solid #222", padding: 16 }}>
-        {/* ... Inspector ... */}
+        <Inspector />
       </aside>
     </div>
   );
