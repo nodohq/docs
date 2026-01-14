@@ -32,8 +32,6 @@ export default function App() {
   const playheadBeat = useProjectStore((s) => s.timeline.playheadBeat);
   const setPlayheadBeat = useProjectStore((s) => s.setPlayheadBeat);
   const selectBlock = useProjectStore((s) => s.selectBlock);
-  const selectedBlockId = useProjectStore((s) => s.selection.selectedBlockId);
-  const deleteBlock = useProjectStore((s) => s.deleteBlock);
 
   const timelineContainerRef = useRef(null);
   const [timelineWidth, setTimelineWidth] = useState(0);
@@ -68,15 +66,17 @@ export default function App() {
         t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable);
 
       if (isTypingContext) return;
-      if (!selectedBlockId) return;
+
+      const id = useProjectStore.getState().selection.selectedBlockId;
+      if (!id) return;
 
       e.preventDefault();
-      deleteBlock(selectedBlockId);
+      useProjectStore.getState().deleteBlock(id);
     };
 
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [selectedBlockId, deleteBlock]);
+  }, []);
 
   const getLocalTimelineX = (clientX) => {
     if (!timelineContainerRef.current) return 0;

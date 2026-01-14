@@ -111,7 +111,7 @@ export default function Inspector() {
           </select>
         </div>
         {validationError && <div style={{ color: 'red', marginTop: 10, fontSize: 12 }}>{validationError}</div>}
-        <div style={{ marginTop: 24, borderTop: "1px solid #333", paddingTop: 16 }}>
+        <div style={{ marginTop: 16, display: "flex", gap: 8 }}>
           <button
             onClick={() => deleteBlock(draftBlock.id)}
             style={{
@@ -119,13 +119,11 @@ export default function Inspector() {
               padding: "8px 10px",
               border: "1px solid #a33",
               background: "#2a0000",
-              color: "#f88",
+              color: "#fff",
               cursor: "pointer",
-              fontWeight: "bold",
-              borderRadius: "4px"
             }}
           >
-            Delete Block
+            Delete
           </button>
         </div>
       </div>
