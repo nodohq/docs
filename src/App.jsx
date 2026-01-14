@@ -10,6 +10,7 @@ import TimelineBlock from "./components/TimelineBlock";
 import TrackLanesOverlay from "./components/TrackLanesOverlay";
 import Playhead from "./components/Playhead";
 import Inspector from "./components/Inspector";
+import Toolbar from "./components/Toolbar";
 
 export default function App() {
   const hydrateFromStorage = useProjectStore((s) => s.hydrateFromStorage);
@@ -32,6 +33,7 @@ export default function App() {
   const setPlayheadBeat = useProjectStore((s) => s.setPlayheadBeat);
   const selectBlock = useProjectStore((s) => s.selectBlock);
   const selectedBlockId = useProjectStore((s) => s.selection.selectedBlockId);
+  const deleteBlock = useProjectStore((s) => s.deleteBlock);
 
   const timelineContainerRef = useRef(null);
   const [timelineWidth, setTimelineWidth] = useState(0);
@@ -56,6 +58,25 @@ export default function App() {
       if (timelineContainerRef.current) observer.unobserve(timelineContainerRef.current);
     };
   }, [hydrateFromStorage]);
+
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key !== "Delete" && e.key !== "Backspace") return;
+
+      const t = e.target;
+      const isTypingContext =
+        t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable);
+
+      if (isTypingContext) return;
+      if (!selectedBlockId) return;
+
+      e.preventDefault();
+      deleteBlock(selectedBlockId);
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [selectedBlockId, deleteBlock]);
 
   const getLocalTimelineX = (clientX) => {
     if (!timelineContainerRef.current) return 0;
@@ -96,83 +117,88 @@ export default function App() {
     headerTopPx + Math.max(0, tracks.length) * (laneHeightPx + laneGapPx) + 24;
 
   return (
-    <div
-      style={{
-        height: "100vh",
-        display: "grid",
-        gridTemplateColumns: "250px 1fr 300px",
-      }}
-    >
-      <aside style={{ borderRight: "1px solid #222", padding: 16 }}>
-        <h3>Library</h3>
-        {tracks.map((track) => (
+    <div style={{ height: "100vh", display: "grid", gridTemplateRows: "48px 1fr" }}>
+      <Toolbar />
+
+      <div
+        style={{
+          height: "100%",
+          display: "grid",
+          gridTemplateColumns: "250px 1fr 300px",
+          overflow: "hidden",
+        }}
+      >
+        <aside style={{ borderRight: "1px solid #222", padding: 16, overflowY: 'auto' }}>
+          <h3>Library</h3>
+          {tracks.map((track) => (
+            <div
+              key={track.id}
+              draggable
+              onDragStart={(e) => {
+                e.dataTransfer.setData("text/plain", track.id);
+                e.dataTransfer.effectAllowed = "copy";
+              }}
+              style={{
+                padding: 8,
+                border: "1px solid #444",
+                marginBottom: 8,
+                cursor: "grab",
+              }}
+            >
+              <div>{track.title}</div>
+              <div style={{ fontSize: 12, color: "#888" }}>{track.artist}</div>
+            </div>
+          ))}
+        </aside>
+
+        <main style={{ overflow: "hidden", display: "flex", flexDirection: "column" }}>
+          <div style={{ borderBottom: "1px solid #222", padding: 16, flexShrink: 0 }}>
+            <div style={{ fontSize: 12, letterSpacing: 2, color: "#777" }}>TIMELINE</div>
+            <div style={{ marginTop: 10, fontFamily: "monospace", fontSize: 12, color: "#ccc" }}>
+              <button onClick={() => setPxPerBeat(pxPerBeat / 2)}>Zoom Out</button>
+              <button onClick={() => setPxPerBeat(pxPerBeat * 2)} style={{ marginLeft: 5 }}>
+                Zoom In
+              </button>
+              <span style={{ marginLeft: 20 }}>pxPerBeat: {pxPerBeat.toFixed(2)}</span>
+              <span style={{ marginLeft: 20 }}>playhead: @{playheadBeat}</span>
+            </div>
+          </div>
+
           <div
-            key={track.id}
-            draggable
-            onDragStart={(e) => {
-              e.dataTransfer.setData("text/plain", track.id);
-              e.dataTransfer.effectAllowed = "copy";
-            }}
+            ref={timelineContainerRef}
+            onClick={handleTimelineClick}
+            onDragOver={handleDragOver}
+            onDrop={handleDrop}
             style={{
-              padding: 8,
-              border: "1px solid #444",
-              marginBottom: 8,
-              cursor: "grab",
+              flexGrow: 1,
+              position: "relative",
+              overflowX: "auto",
+              overflowY: "auto",
+              cursor: "pointer",
+              minHeight: `${lanesHeight}px`,
+              paddingLeft: `${laneLabelWidthPx}px`,
             }}
           >
-            <div>{track.title}</div>
-            <div style={{ fontSize: 12, color: "#888" }}>{track.artist}</div>
+            <BeatGrid width={timelineWidth} offsetLeftPx={laneLabelWidthPx} />
+            <TrackLanesOverlay width={timelineWidth} labelWidthPx={laneLabelWidthPx} />
+
+            {blocks.map((block) => (
+              <TimelineBlock
+                key={block.id}
+                block={block}
+                containerRef={timelineContainerRef}
+                laneLabelWidthPx={laneLabelWidthPx}
+              />
+            ))}
+
+            <Playhead labelWidthPx={laneLabelWidthPx} />
           </div>
-        ))}
-      </aside>
+        </main>
 
-      <main style={{ overflow: "hidden", display: "flex", flexDirection: "column" }}>
-        <div style={{ borderBottom: "1px solid #222", padding: 16, flexShrink: 0 }}>
-          <div style={{ fontSize: 12, letterSpacing: 2, color: "#777" }}>TIMELINE</div>
-          <div style={{ marginTop: 10, fontFamily: "monospace", fontSize: 12, color: "#ccc" }}>
-            <button onClick={() => setPxPerBeat(pxPerBeat / 2)}>Zoom Out</button>
-            <button onClick={() => setPxPerBeat(pxPerBeat * 2)} style={{ marginLeft: 5 }}>
-              Zoom In
-            </button>
-            <span style={{ marginLeft: 20 }}>pxPerBeat: {pxPerBeat.toFixed(2)}</span>
-            <span style={{ marginLeft: 20 }}>playhead: @{playheadBeat}</span>
-          </div>
-        </div>
-
-        <div
-          ref={timelineContainerRef}
-          onClick={handleTimelineClick}
-          onDragOver={handleDragOver}
-          onDrop={handleDrop}
-          style={{
-            flexGrow: 1,
-            position: "relative",
-            overflowX: "auto",
-            overflowY: "auto",
-            cursor: "pointer",
-            minHeight: `${lanesHeight}px`,
-            paddingLeft: `${laneLabelWidthPx}px`,
-          }}
-        >
-          <BeatGrid width={timelineWidth} offsetLeftPx={laneLabelWidthPx} />
-          <TrackLanesOverlay width={timelineWidth} labelWidthPx={laneLabelWidthPx} />
-
-          {blocks.map((block) => (
-            <TimelineBlock
-              key={block.id}
-              block={block}
-              containerRef={timelineContainerRef}
-              laneLabelWidthPx={laneLabelWidthPx}
-            />
-          ))}
-
-          <Playhead labelWidthPx={laneLabelWidthPx} />
-        </div>
-      </main>
-
-      <aside style={{ borderLeft: "1px solid #222", padding: 16 }}>
-        <Inspector />
-      </aside>
+        <aside style={{ borderLeft: "1px solid #222", padding: 16, overflowY: 'auto' }}>
+          <Inspector />
+        </aside>
+      </div>
     </div>
   );
 }
