@@ -7,6 +7,7 @@ import { beatToPx } from "./utils/projection";
 import { snapPxToBeat } from "./utils/snap";
 import Debug from "./components/Debug";
 import BeatGrid from "./components/BeatGrid";
+import TimelineBlock from "./components/TimelineBlock";
 
 export default function App() {
   const hydrateFromStorage = useProjectStore((s) => s.hydrateFromStorage);
@@ -119,18 +120,7 @@ export default function App() {
           
           {/* Render Blocks */}
           {blocks.map(block => (
-            <div key={block.id} style={{
-              position: 'absolute',
-              left: beatToPx(block.startBeat, pxPerBeat),
-              width: beatToPx(block.lengthBeats, pxPerBeat),
-              top: '40px', // Simple static offset for now
-              height: '60px',
-              backgroundColor: 'rgba(99, 102, 241, 0.7)',
-              border: '1px solid rgba(99, 102, 241, 1)',
-              borderRadius: '4px',
-            }}>
-              <span style={{color: 'white', padding: '4px'}}>{block.trackId}</span>
-            </div>
+            <TimelineBlock key={block.id} block={block} containerRef={timelineContainerRef} />
           ))}
 
           {/* Playhead Marker */}

@@ -2,6 +2,7 @@
 import { create } from "zustand";
 import { clampZoom } from "../utils/projection";
 import { snapBeatToBeat } from "../utils/snap";
+import { MIN_BLOCK_LEN_BEATS } from "../utils/collisions";
 
 const DEFAULT = {
   bpmLocked: 126,
@@ -26,6 +27,34 @@ const DEFAULT = {
 
 export const useProjectStore = create((set, get) => ({
   ...DEFAULT,
+
+  // --- Block Manipulation (Ticket #06) ---
+  moveBlock: (blockId, nextStartBeat) => {
+    set(state => ({
+      timeline: {
+        ...state.timeline,
+        blocks: state.timeline.blocks.map(block => 
+          block.id === blockId 
+            ? { ...block, startBeat: snapBeatToBeat(nextStartBeat) } 
+            : block
+        ),
+      },
+    }));
+  },
+
+  resizeBlock: (blockId, nextLengthBeats) => {
+    set(state => ({
+      timeline: {
+        ...state.timeline,
+        blocks: state.timeline.blocks.map(block =>
+          block.id === blockId
+            ? { ...block, lengthBeats: Math.max(MIN_BLOCK_LEN_BEATS, snapBeatToBeat(nextLengthBeats)) }
+            : block
+        ),
+      },
+    }));
+  },
+
 
   // --- Block creation (Ticket #05) ---
   createBlockFromTrack: (trackId, startBeat) => {
