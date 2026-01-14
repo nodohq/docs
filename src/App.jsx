@@ -32,7 +32,6 @@ export default function App() {
   const playheadBeat = useProjectStore((s) => s.timeline.playheadBeat);
   const setPlayheadBeat = useProjectStore((s) => s.setPlayheadBeat);
   const selectBlock = useProjectStore((s) => s.selectBlock);
-  const selectedBlockId = useProjectStore((s) => s.selection.selectedBlockId);
 
   const timelineContainerRef = useRef(null);
   const [timelineWidth, setTimelineWidth] = useState(0);

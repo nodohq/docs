@@ -167,22 +167,27 @@ export const useProjectStore = create((set, get) => ({
       const trackExists = state.tracks.some((t) => t.id === trackId);
       if (!trackExists) return state;
 
-      const id = typeof crypto !== "undefined" && crypto.randomUUID
+      const id =
+        typeof crypto !== "undefined" && crypto.randomUUID
           ? crypto.randomUUID()
-          : `b_${Date.now()}_${Math.random()}`;
+          : `b_${Date.now()}_${Math.random().toString(16).slice(2)}`;
 
       const newBlock = {
         id,
         trackId,
         startBeat: snapBeatToBeat(startBeat),
         lengthBeats: 512,
-        transition: "cut", // Default transition
+        transition: "cut",
       };
 
       return {
         timeline: {
           ...state.timeline,
           blocks: [...state.timeline.blocks, newBlock],
+        },
+        selection: {
+          selectedTrackId: null,
+          selectedBlockId: id,
         },
       };
     });
