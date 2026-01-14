@@ -217,6 +217,9 @@ export const useProjectStore = create((set, get) => ({
 
   selectBlock: (blockId) => {
     set((state) => {
+      if (blockId === null) {
+        return { selection: { selectedTrackId: null, selectedBlockId: null } };
+      }
       const exists = state.timeline.blocks.some((b) => b.id === blockId);
       return { selection: { selectedTrackId: null, selectedBlockId: exists ? blockId : null } };
     });
