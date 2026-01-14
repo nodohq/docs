@@ -1,3 +1,4 @@
+import React from "react";
 import { useEffect } from "react";
 import { useProjectStore } from "./store/useProjectStore";
 import { loadProjectState } from "./storage/projectDb";
