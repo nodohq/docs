@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useProjectStore } from "./store/useProjectStore";
 import { loadProjectState } from "./storage/projectDb";
 import { subscribeProjectPersistence } from "./storage/subscribeProjectPersistence";
-import { beatToPx } from "./utils/projection";
 import { snapPxToBeat } from "./utils/snap";
 import BeatGrid from "./components/BeatGrid";
 import TimelineBlock from "./components/TimelineBlock";
@@ -64,14 +63,14 @@ export default function App() {
       const t = e.target;
       const isTypingContext =
         t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable);
-
       if (isTypingContext) return;
 
-      const id = useProjectStore.getState().selection.selectedBlockId;
+      const { selection, deleteBlock } = useProjectStore.getState();
+      const id = selection?.selectedBlockId;
       if (!id) return;
 
       e.preventDefault();
-      useProjectStore.getState().deleteBlock(id);
+      if (typeof deleteBlock === "function") deleteBlock(id);
     };
 
     window.addEventListener("keydown", onKeyDown);
