@@ -1,34 +1,22 @@
-import { pxToBeat } from "./projection";
 
-/**
- * Sanitizes a number to be a non-negative integer beat.
- * This is the single source of truth for beat sanitation.
- * @param {any} n The value to sanitize.
- * @returns {number} A non-negative integer.
- */
-function sanitizeBeat(n) {
-  const num = Number.isFinite(n) ? n : 0;
-  return Math.max(0, Math.round(num));
-}
+import { pxToBeat } from './projection';
 
 /**
  * Snaps a pixel value to the nearest integer beat.
- * Relies on the core projection logic.
- * @param {number} px - The pixel value from the UI.
- * @param {number} pxPerBeat - The current zoom level.
- * @returns {number} A non-negative integer beat.
+ * @param {number} px - The pixel value to snap.
+ * @param {number} pxPerBeat - The number of pixels per beat.
+ * @returns {number} The snapped beat value (integer, >= 0).
  */
-export function snapPxToBeat(px, pxPerBeat) {
-  const rawBeat = pxToBeat(px, pxPerBeat);
-  return sanitizeBeat(rawBeat);
-}
+export const snapPxToBeat = (px, pxPerBeat) => {
+  const beat = pxToBeat(px, pxPerBeat);
+  return Math.max(0, Math.round(beat));
+};
 
 /**
- * Ensures a beat value is a valid, non-negative integer.
- * This is a simple pass-through to the sanitizer.
+ * Snaps a beat value to the nearest integer beat.
  * @param {number} beat - The beat value to snap.
- * @returns {number} A non-negative integer beat.
+ * @returns {number} The snapped beat value (integer, >= 0).
  */
-export function snapBeatToBeat(beat) {
-  return sanitizeBeat(beat);
-}
+export const snapBeatToBeat = (beat) => {
+  return Math.max(0, Math.round(beat));
+};

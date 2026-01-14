@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from "react";
 import { useProjectStore } from "./store/useProjectStore";
 import { loadProjectState } from "./storage/projectDb";
@@ -49,7 +50,7 @@ export default function App() {
   const handleTimelineClick = (e) => {
     if (!timelineContainerRef.current) return;
     const rect = timelineContainerRef.current.getBoundingClientRect();
-    const localX = e.clientX - rect.left;
+    const localX = (e.clientX - rect.left) + timelineContainerRef.current.scrollLeft;
     const newBeat = snapPxToBeat(localX, pxPerBeat);
     setPlayheadBeat(newBeat);
   };
