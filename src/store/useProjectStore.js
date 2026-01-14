@@ -1,19 +1,10 @@
 import { create } from "zustand";
 import { clampZoom } from "../utils/projection";
 
-/**
- * Ticket #02 — Beat-Atomic store
- * - Internal unit: beat (integer)
- * - Projection logic is handled by `src/utils/projection.js`
- * - State is persisted via a subscriber in `src/storage/`
- *
- * This store should NOT contain projection logic (beat<->px), snapping, or collision detection.
- */
-
 const DEFAULT = {
-  bpmLocked: 126, // Global reference (display only)
+  bpmLocked: 126,
   zoom: {
-    pxPerBeat: 2, // Default zoom level
+    pxPerBeat: 2,
   },
   selection: {
     selectedTrackId: null,
@@ -27,16 +18,26 @@ const DEFAULT = {
       { id: "b1", trackId: "t1", startBeat: 0, lengthBeats: 512 },
       { id: "b2", trackId: "t2", startBeat: 480, lengthBeats: 512 },
     ],
+    playheadBeat: 0, // Ticket #04: Add playhead state
   },
 };
 
 export const useProjectStore = create((set, get) => ({
   ...DEFAULT,
 
+  // --- Playhead (Ticket #04) ---
+  setPlayheadBeat: (beat) => {
+    set(state => ({
+      timeline: {
+        ...state.timeline,
+        playheadBeat: Math.round(beat), // Sanitize and set (snap function will be in another commit)
+      }
+    }))
+  },
+
   // --- Zoom ---
   setPxPerBeat: (newPxPerBeat) => {
     set((state) => ({
-      // Create a new zoom object for immutability, ensuring persistence works
       zoom: {
         ...state.zoom,
         pxPerBeat: clampZoom(newPxPerBeat),
@@ -48,7 +49,6 @@ export const useProjectStore = create((set, get) => ({
   selectTrack: (trackId) => {
     const exists = get().tracks.some((t) => t.id === trackId);
     set(state => ({
-        // Create a new selection object
         selection: { ...state.selection, selectedTrackId: exists ? trackId : null }
     }));
   },
@@ -61,7 +61,6 @@ export const useProjectStore = create((set, get) => ({
   // --- Mutations ---
   updateTrackMeta: (trackId, patch) => {
     set((state) => ({
-      // Create a new tracks array
       tracks: state.tracks.map((t) =>
         t.id === trackId ? { ...t, ...patch } : t
       ),
@@ -73,7 +72,6 @@ export const useProjectStore = create((set, get) => ({
     if (!data || typeof data !== "object") return;
 
     set((state) => ({
-      // Only replace data, keep actions
       bpmLocked: data.bpmLocked ?? state.bpmLocked,
       zoom: data.zoom ?? state.zoom,
       selection: data.selection ?? state.selection,
