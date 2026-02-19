@@ -1,14 +1,11 @@
-# DJArchitect
+# NODO Docs
+
+Repository de documentation uniquement.
 
 ## Source de vérité
-- `MASTER_PLAN.md` = Constitution (vision + règles + périmètre + backlog)
-- `MVP_SPEC.md` = Spéc MVP (ce qui existe vraiment)
+- `docs/MASTER_PLAN.md` = Constitution (vision + règles + périmètre + backlog)
+- `docs/MVP_SPEC.md` = Spéc MVP (ce qui existe vraiment)
+- `docs/TICKETS.md` = Suivi tickets
 
 ## Règle de discipline
-Tout ce qui n’est pas dans `MVP_SPEC.md` n’existe pas.
-
-## Ticket en cours
-- Ticket #01 — Layout 3 colonnes (Library | Timeline | Inspector)
-- Aucun drag
-- Aucun snap
-- Aucun audio
+Tout ce qui n’est pas dans `docs/MVP_SPEC.md` n’existe pas.
